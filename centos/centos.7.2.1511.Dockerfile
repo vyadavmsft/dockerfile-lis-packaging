@@ -11,12 +11,16 @@ RUN mkdir /root/rpmbuild/SRPMS
 
 RUN git clone https://github.com/LIS/lis-next
 RUN mv /lis-next/hv-rhel7.x/hv /hv
-RUN tar -czf /root/rpmbuild/SOURCES/lis-next-rh6.tar.gz /hv
+RUN tar -czf /root/rpmbuild/SOURCES/lis-next-rh7.tar.gz /hv
 
 ADD specs/lis-centos7.spec /root/rpmbuild/SPECS/lis-centos7.spec
+ADD static/100-balloons.rules /root/rpmbuild/SOURCES/100-balloons.rules
+ADD static/hypervfcopy /root/rpmbuild/SOURCES/hypervfcopy
+ADD static/hypervkvpd /root/rpmbuild/SOURCES/hypervkvpd
+ADD static/hypervvssd /root/rpmbuild/SOURCES/hypervvssd
 
 RUN cd /root/rpmbuild
 RUN echo '%_topdir %(echo $HOME)/rpmbuild' > /root/.rpmmacros
 WORKDIR /root/rpmbuild/SPECS
 
-#RUN rpmbuild -bb *.spec
+RUN rpmbuild -bb *.spec
