@@ -1,7 +1,7 @@
 FROM centos:7.2.1511
+MAINTAINER seansp@microsoft.com
 
 RUN yum -y groupinstall 'Development Tools'
-
 RUN mkdir /root/rpmbuild
 RUN mkdir /root/rpmbuild/BUILD
 RUN mkdir /root/rpmbuild/RPMS
@@ -15,6 +15,6 @@ ADD lis-rhel6.spec /root/rpmbuild/SPECS/lis-rhel6.spec
 
 RUN cd /root/rpmbuild
 RUN echo '%_topdir %(echo $HOME)/rpmbuild' > /root/.rpmmacros
-RUN cd /root/rpmbuild/SPECS
+WORKDIR /root/rpmbuild/SPECS
 
 #RUN rpmbuild -bb *.spec
