@@ -14,7 +14,7 @@ RUN mv /lis-next/hv-rhel7.x/hv /hv
 RUN tar -czf /root/rpmbuild/SOURCES/lis-next-rh7.tar.gz /hv
 
 ADD specs/lis-centos7.spec /root/rpmbuild/SPECS/lis-centos7.spec
-ADD static/100-balloons.rules /root/rpmbuild/SOURCES/100-balloons.rules
+ADD static/100-balloon.rules /root/rpmbuild/SOURCES/100-balloon.rules
 ADD static/hypervfcopy /root/rpmbuild/SOURCES/hypervfcopy
 ADD static/hypervkvpd /root/rpmbuild/SOURCES/hypervkvpd
 ADD static/hypervvssd /root/rpmbuild/SOURCES/hypervvssd
