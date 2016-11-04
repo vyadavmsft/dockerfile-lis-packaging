@@ -4,8 +4,8 @@ Docker files and supporting resources for packaging LIS resources.
 
 Example usage:
 -------------------------------
-git clone https://github.com/openstack-hyper-v/dockerfile-lis-packaging.git
-cd dockerfile-lis-packaging
-docker build -f centos/centos.7.2.1511.Dockerfile -t centos-7-lis .
-docker run -it centos-7-lis bash
-]in container] rpmbuild -bb *.spec
+<br>git clone https://github.com/openstack-hyper-v/dockerfile-lis-packaging.git
+<br>cd dockerfile-lis-packaging
+<br>docker build -f centos/centos.7.2.1511.Dockerfile -t centos-7-lis .
+<br>docker run -it centos-7-lis bash
+<br>]in container] rpmbuild -bb *.spec
