@@ -15,6 +15,6 @@ ADD lis-rhel6.spec /root/rpmbuild/SPECS/lis-rhel6.spec
 
 RUN cd /root/rpmbuild
 RUN echo '%_topdir %(echo $HOME)/rpmbuild' > /root/.rpmmacros
-RUN cd /root/rpmbuild/SPEC
+RUN cd /root/rpmbuild/SPECS
 
 #RUN rpmbuild -bb *.spec
