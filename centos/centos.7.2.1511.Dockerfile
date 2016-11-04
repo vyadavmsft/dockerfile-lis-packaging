@@ -8,10 +8,12 @@ RUN mkdir /root/rpmbuild/RPMS
 RUN mkdir /root/rpmbuild/SOURCES
 RUN mkdir /root/rpmbuild/SPECS
 RUN mkdir /root/rpmbuild/SRPMS
-RUN git clone https://github.com/LIS/lis-next
-RUN tar -czf /root/rpmbuild/SOURCES/lis-next-rh6.tar.gz /lis-next
 
-ADD lis-rhel6.spec /root/rpmbuild/SPECS/lis-rhel6.spec
+RUN git clone https://github.com/LIS/lis-next
+RUN mv /lis-next/hv-rhel7.x/hv /hv
+RUN tar -czf /root/rpmbuild/SOURCES/lis-next-rh6.tar.gz /hv
+
+ADD specs/lis-centos7.spec /root/rpmbuild/SPECS/lis-centos7.spec
 
 RUN cd /root/rpmbuild
 RUN echo '%_topdir %(echo $HOME)/rpmbuild' > /root/.rpmmacros
