@@ -1,6 +1,9 @@
 FROM centos:7.1.1503
 MAINTAINER seansp@microsoft.com
 
+RUN yum swap -y fakesystemd systemd && \
+    yum install -y systemd-devel
+
 RUN yum -y groupinstall 'Development Tools'
 RUN mkdir /root/rpmbuild
 RUN mkdir /root/rpmbuild/BUILD
