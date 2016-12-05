@@ -11,6 +11,8 @@ RUN mkdir /root/rpmbuild/SRPMS
 
 RUN git clone https://github.com/LIS/lis-next
 RUN mv /lis-next/hv-rhel7.x/hv /hv
+# Add the fingerprint '.Dockered' to the #define
+RUN sed -i -E "s/(HV_DRV_VERSION\t)(\")(.*)(\")/\1\2\3.Dockered\4/" /hv/include/linux/hv_compat.h
 RUN tar -czf /root/rpmbuild/SOURCES/lis-next-rh7.tar.gz /hv
 
 ADD specs/lis-centos7.spec /root/rpmbuild/SPECS/lis-centos7.spec
