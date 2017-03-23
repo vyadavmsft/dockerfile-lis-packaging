@@ -1,6 +1,7 @@
 FROM centos:7.2.1511
 MAINTAINER seansp@microsoft.com
 
+RUN yum groups mark convert
 RUN yum -y groupinstall 'Development Tools'
 RUN mkdir /root/rpmbuild
 RUN mkdir /root/rpmbuild/BUILD
