@@ -1,4 +1,4 @@
-gROM ubuntu:16.04
+FROM ubuntu:16.04
 MAINTAINER vyadav@microsoft.com
 
 RUN apt-get install build-essential
