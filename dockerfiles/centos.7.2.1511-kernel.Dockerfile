@@ -8,8 +8,8 @@ RUN git clone git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
 
 # Add the fingerprint '.Dockered' to the #define
 
-RUN cd /root/linux-next
+RUN cd linux-next
 RUN 'y' | make oldconfig
-WORKDIR /root/linux-next
+WORKDIR linux-next
 
 RUN make rpm
