@@ -24,6 +24,7 @@ node 'docker-centos','docker-ubuntu' {
         ensure  =>  'latest',
       }
     }
+
     'Centos':{
       notice('This centos container hosts runs a local postgresql server, operations production puppet infra containers, and executes centos based contianer jobs.')
 
@@ -42,12 +43,12 @@ node 'docker-centos','docker-ubuntu' {
         ensure  =>  'latest',
       }
 
-     }
-
     }
+
     default:{
       warning("Unsupported ${operatingsystem}")
     }
   }
+
 
 }
