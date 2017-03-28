@@ -9,3 +9,4 @@ RUN cd /root/linux-next/
 WORKDIR /root/linux-next
 
 RUN make-kpkg kernel-image kernel-source --initrd --append-to-version=.hyperv
+
