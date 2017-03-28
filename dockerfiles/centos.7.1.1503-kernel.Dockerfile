@@ -1,4 +1,4 @@
-FROM centos:7.2.1511
+FROM centos:7.1.1503
 MAINTAINER vyadav@microsoft.com
 ENV CONCURRENCY_LEVEL 16
 RUN rpm --rebuilddb
